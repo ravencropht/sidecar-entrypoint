@@ -52,6 +52,24 @@ touch /tmp/shutdown
 curl localhost:8080/health
 ```
 
+## Tests
+
+Integration tests are provided in `tests.sh`.
+
+```bash
+# Run all tests
+./tests.sh
+```
+
+The test suite validates:
+- Missing environment variables cause graceful exit
+- Health endpoint returns OK
+- Quit endpoint triggers shutdown
+- Stopfile triggers shutdown
+- Child process is terminated on shutdown
+- Invalid endpoints return 404
+- Commands with arguments work correctly
+
 ## License
 
 See [LICENSE](LICENSE) file.
